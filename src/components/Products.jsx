@@ -11,7 +11,7 @@ const Products = (props) => {
 
   //Estado del pedido
   const [options, setOptions] = useState(MenuBebidas);
-  
+  //Agregamos los productos al carrito
   const addCart = (menu) => {
     console.log(menu);
     const newOrder = [

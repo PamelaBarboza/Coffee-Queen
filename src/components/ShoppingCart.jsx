@@ -38,27 +38,26 @@ const ShoppingCart = ({ order, handleDelete }) => {
     console.log(clientOrder);
     const dateOrder = new Date();
     const newUser = client;
-    
+
     db.collection("orders")
       .add({
         product: clientOrder,
         date: dateOrder.toLocaleString(),
         status: "En espera",
-        nameClient: newUser
+        nameClient: newUser,
       })
       .then(function (docRef) {
         console.log("Document written with ID: ", docRef.id);
-        deleteOrder()
+        deleteOrder();
       })
       .catch(function (error) {
         console.error("Error adding document: ", error);
       });
   };
-  
 
   const [client, setClient] = React.useState("");
 
- 
+  //Guarda el nombre del usuario para enviar al firebase
   const oki = async (e) => {
     e.preventDefault();
 

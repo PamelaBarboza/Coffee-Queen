@@ -18,13 +18,12 @@ function App() {
     setWaiter(waiter);
   };
 
-  
-
   return (
     <Router>
       <Switch>
         <Route path="/FoodOrders">
-          <Waiter waiter={waiter} handleSetWaiter={handleSetWaiter} />
+          <Waiter waiter={waiter} handleSetWaiter={handleSetWaiter} />{" "}
+          {/* Cuando se quiere llamar de un componente a otro componente */}
         </Route>
         <Route path="/Chef">
           <Food cooking={cooking} handleSetCooking={handleSetCooking} />
